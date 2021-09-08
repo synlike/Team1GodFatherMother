@@ -15,6 +15,7 @@ public class TestGrab : MonoBehaviour
     [SerializeField]
     private bool isLeg = false;
     private bool isGrab = false;
+    private bool ropeGrab = false;
 
     private void Awake()
     {
@@ -30,7 +31,6 @@ public class TestGrab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -39,11 +39,17 @@ public class TestGrab : MonoBehaviour
         if (player.GetButtonUp("GrabArm"))
         {
             isGrab = false;
+            if (ropeGrab)
+                Destroy(GetComponent<FixedJoint2D>());
+            ropeGrab = false;
         }
         
         if (player.GetButtonUp("GrabLeg"))
         {
             isGrab = false;
+            if (ropeGrab)
+                Destroy(GetComponent<FixedJoint2D>());
+            ropeGrab = false;
         }
 
         if (isGrab)
@@ -60,9 +66,27 @@ public class TestGrab : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Grable") && ((player.GetButton("GrabArm") && !isLeg)) || ((player.GetButton("GrabLeg") && isLeg)))
+        if (((player.GetButton("GrabArm") && !isLeg)) || ((player.GetButton("GrabLeg") && isLeg)))
         {
-            isGrab = true;
+            if(other.gameObject.CompareTag("Rope") && !ropeGrab)
+            {
+                Debug.Log("GRAB ROPE");
+                ropeGrab = true;
+                Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
+                if(rb != null)
+                {
+                    FixedJoint2D fixedJoint = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
+                    fixedJoint.connectedBody = rb;
+                }
+                else
+                {
+                    FixedJoint2D fixedJoint = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
+                }
+
+            }
+
+            if(other.gameObject.CompareTag("Grable"))
+                isGrab = true;
         }
     }
 
