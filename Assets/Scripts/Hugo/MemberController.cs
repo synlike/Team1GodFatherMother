@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class MemberController : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     Vector2 direction;
+    public float force;
+    
     private void Start()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        direction = new Vector2(-2, 0) * Time.deltaTime;
+        
+        direction = new Vector2(-force, 0) * Time.deltaTime;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Mouvement();
+        }
     }
 
     void Mouvement() 
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            rb.AddForce(direction);
-
-        }
-    
+        rb.AddForce(direction);
     }
 }
