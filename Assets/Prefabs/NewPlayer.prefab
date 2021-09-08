@@ -720,7 +720,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 150
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1076,6 +1076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6818499566698717583}
+  - component: {fileID: 1116290721}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Untagged
@@ -1107,6 +1108,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116290721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566698717582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde9912a4a4243844bde9550252bfff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rbarm: {fileID: 6818499566392831834}
+  rbleg: {fileID: 6818499566650299691}
+  force: 100
+  playerID: 0
 --- !u!1 &6818499566758284368
 GameObject:
   m_ObjectHideFlags: 0
