@@ -13,6 +13,7 @@ public class TestGrab : MonoBehaviour
     private Player player;
 
     [SerializeField]
+    private bool isLeg = false;
     private bool isGrab = false;
 
     private void Awake()
@@ -39,6 +40,11 @@ public class TestGrab : MonoBehaviour
         {
             isGrab = false;
         }
+        
+        if (player.GetButtonUp("GrabLeg"))
+        {
+            isGrab = false;
+        }
 
         if (isGrab)
         {
@@ -52,9 +58,9 @@ public class TestGrab : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionStay2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Grable") && player.GetButton("GrabArm"))
+        if (other.gameObject.CompareTag("Grable") && ((player.GetButton("GrabArm") && !isLeg)) || ((player.GetButton("GrabLeg") && isLeg)))
         {
             isGrab = true;
         }
