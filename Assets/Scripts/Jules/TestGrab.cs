@@ -5,8 +5,8 @@ using Rewired;
 
 public class TestGrab : MonoBehaviour
 {
-    public CircleCollider2D col;
-    private Vector3 wallPoint;
+    public GravityManager gravityManager;
+    public TriggerIcons triggerIcons;
     public Rigidbody2D rb;
 
     [SerializeField] private int playerID = 0;
@@ -14,8 +14,8 @@ public class TestGrab : MonoBehaviour
 
     [SerializeField]
     private bool isLeg = false;
-    private bool isGrab = false;
-    private bool ropeGrab = false;
+    public bool isGrab = false;
+    public bool ropeGrab = false;
 
     private void Awake()
     {
@@ -36,41 +36,50 @@ public class TestGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetButtonUp("GrabArm"))
+        if (player.GetButtonUp("GrabArm") && !isLeg)
         {
-            isGrab = false;
+            UnGrab();
+
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
+
+            triggerIcons.HideButton();
+        }
+        else if(player.GetButtonDown("GrabArm") && !isLeg)
+        {
+            triggerIcons.ShowButton(triggerIcons.buttonPressedColor);
         }
         
-        if (player.GetButtonUp("GrabLeg"))
+        if (player.GetButtonUp("GrabLeg") && isLeg)
         {
-            isGrab = false;
+            UnGrab();
+
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
+
+            triggerIcons.HideButton();
+        }
+        else if(player.GetButtonDown("GrabLeg") && isLeg)
+        {
+            triggerIcons.ShowButton(triggerIcons.buttonPressedColor);
         }
 
-        if (isGrab)
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
-        else
-        {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.bodyType = RigidbodyType2D.Dynamic;
-        }
+
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (((player.GetButton("GrabArm") && !isLeg)) || ((player.GetButton("GrabLeg") && isLeg)))
         {
             if(other.gameObject.CompareTag("Rope") && !ropeGrab)
             {
                 Debug.Log("GRAB ROPE");
+                if(!ropeGrab)
+                {
+                    triggerIcons.ShowButton(triggerIcons.grabbedColor);
+                }
                 ropeGrab = true;
                 Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
                 if(rb != null)
@@ -85,10 +94,31 @@ public class TestGrab : MonoBehaviour
 
             }
 
-            if(other.gameObject.CompareTag("Grable"))
+            if (other.gameObject.CompareTag("Grable"))
+            {
+                if (!isGrab)
+                {
+                    Grab();
+                    triggerIcons.ShowButton(triggerIcons.grabbedColor);
+                }
+                
                 isGrab = true;
+            }
         }
     }
 
-    
+    private void Grab()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        StartCoroutine(gravityManager.Lerp(gravityManager.highGrav, gravityManager.initGrav, 0));
+    }
+
+    private void UnGrab()
+    {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        isGrab = false;
+    }
 }
