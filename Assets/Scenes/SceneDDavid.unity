@@ -372,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 794218577}
   m_LocalRotation: {x: -0, y: -0, z: 0.3987491, w: 0.91706014}
   m_LocalPosition: {x: -0.1, y: -0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children: []
   m_Father: {fileID: 794401394}
   m_RootOrder: 0
@@ -417,7 +417,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6343c50d0b2a8244a8d1e6208abf8d12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8290bc37b5d32694cb4971f150913c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressedColor: {r: 0.12629052, g: 0.38966915, b: 0.8113208, a: 0}
+  buttonPressedColor: {r: 0.12629052, g: 0.38966915, b: 0.8113208, a: 1}
   grabbedColor: {r: 0.8980392, g: 0.8627451, b: 0.10980392, a: 1}
 --- !u!4 &794401394 stripped
 Transform:
@@ -763,7 +763,7 @@ Transform:
   m_GameObject: {fileID: 1206808046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00447464, y: -0.38752246, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children: []
   m_Father: {fileID: 347966369}
   m_RootOrder: 0
@@ -808,7 +808,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e71813f2f696004aa38d50a9e05a759, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8290bc37b5d32694cb4971f150913c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressedColor: {r: 0.12629052, g: 0.38966915, b: 0.8113208, a: 0}
+  buttonPressedColor: {r: 0.12629052, g: 0.38966915, b: 0.8113208, a: 1}
   grabbedColor: {r: 0.8980392, g: 0.8627451, b: 0.10980392, a: 1}
 --- !u!1 &1278921491
 GameObject:
@@ -1004,7 +1004,7 @@ Transform:
   m_GameObject: {fileID: 1783702254}
   m_LocalRotation: {x: -0, y: -0, z: -0.3987491, w: 0.91706014}
   m_LocalPosition: {x: 0, y: -0.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children: []
   m_Father: {fileID: 64090143}
   m_RootOrder: 0
@@ -1049,7 +1049,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6343c50d0b2a8244a8d1e6208abf8d12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8290bc37b5d32694cb4971f150913c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressedColor: {r: 0.7735849, g: 0.2112067, b: 0.12041653, a: 0}
+  buttonPressedColor: {r: 0.7735849, g: 0.2112067, b: 0.12041653, a: 1}
   grabbedColor: {r: 0.8980392, g: 0.8627451, b: 0.10980392, a: 1}
 --- !u!1 &1957594110
 GameObject:
@@ -1101,7 +1101,7 @@ Transform:
   m_GameObject: {fileID: 1957594110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06824684, y: -0.3800001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children: []
   m_Father: {fileID: 1546391048}
   m_RootOrder: 0
@@ -1146,7 +1146,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e71813f2f696004aa38d50a9e05a759, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8290bc37b5d32694cb4971f150913c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPressedColor: {r: 0.7735849, g: 0.2112067, b: 0.12041653, a: 0}
+  buttonPressedColor: {r: 0.7735849, g: 0.2112067, b: 0.12041653, a: 1}
   grabbedColor: {r: 0.8980392, g: 0.8627451, b: 0.10980392, a: 1}
 --- !u!1 &2079361717 stripped
 GameObject:
