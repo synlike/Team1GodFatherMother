@@ -6,6 +6,7 @@ using Rewired;
 public class TestGrab : MonoBehaviour
 {
     public GravityManager gravityManager;
+    public TriggerIcons triggerIcons;
     public Rigidbody2D rb;
 
     [SerializeField] private int playerID = 0;
@@ -42,6 +43,12 @@ public class TestGrab : MonoBehaviour
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
+
+            triggerIcons.HideButton();
+        }
+        else if(player.GetButtonDown("GrabArm") && !isLeg)
+        {
+            triggerIcons.ShowButton(triggerIcons.buttonPressedColor);
         }
         
         if (player.GetButtonUp("GrabLeg") && isLeg)
@@ -51,7 +58,15 @@ public class TestGrab : MonoBehaviour
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
+
+            triggerIcons.HideButton();
         }
+        else if(player.GetButtonDown("GrabLeg") && isLeg)
+        {
+            triggerIcons.ShowButton(triggerIcons.buttonPressedColor);
+        }
+
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -61,6 +76,10 @@ public class TestGrab : MonoBehaviour
             if(other.gameObject.CompareTag("Rope") && !ropeGrab)
             {
                 Debug.Log("GRAB ROPE");
+                if(!ropeGrab)
+                {
+                    triggerIcons.ShowButton(triggerIcons.grabbedColor);
+                }
                 ropeGrab = true;
                 Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
                 if(rb != null)
@@ -80,6 +99,7 @@ public class TestGrab : MonoBehaviour
                 if (!isGrab)
                 {
                     Grab();
+                    triggerIcons.ShowButton(triggerIcons.grabbedColor);
                 }
                 
                 isGrab = true;
