@@ -14,8 +14,8 @@ public class TestGrab : MonoBehaviour
 
     [SerializeField]
     private bool isLeg = false;
-    private bool isGrab = false;
-    private bool ropeGrab = false;
+    public bool isGrab = false;
+    public bool ropeGrab = false;
 
     private void Awake()
     {
@@ -118,8 +118,6 @@ public class TestGrab : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.None;
         rb.bodyType = RigidbodyType2D.Dynamic;
-        StartCoroutine(gravityManager.Lerp(gravityManager.initGrav, gravityManager.highGrav, gravityManager.lerpDuration));
-
 
         isGrab = false;
     }

@@ -484,6 +484,8 @@ MonoBehaviour:
   rb: {fileID: 3744406162983813248}
   playerID: 1
   isLeg: 1
+  isGrab: 0
+  ropeGrab: 0
 --- !u!70 &8946609239916876282
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -612,6 +614,8 @@ MonoBehaviour:
   rb: {fileID: 8481354939935930911}
   playerID: 0
   isLeg: 0
+  isGrab: 0
+  ropeGrab: 0
 --- !u!1 &5401437353685065631
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,6 +728,8 @@ MonoBehaviour:
   rb: {fileID: 6573949697916267239}
   playerID: 1
   isLeg: 0
+  isGrab: 0
+  ropeGrab: 0
 --- !u!1 &6818499565609133121
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +743,7 @@ GameObject:
   - component: {fileID: 6818499565609133124}
   - component: {fileID: 6818499565609133127}
   - component: {fileID: 6818499565609133126}
+  - component: {fileID: 1857103944}
   m_Layer: 0
   m_Name: Left Leg
   m_TagString: Untagged
@@ -880,6 +887,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &1857103944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499565609133121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566159539676
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +913,7 @@ GameObject:
   - component: {fileID: 6818499566159539667}
   - component: {fileID: 6818499566159539666}
   - component: {fileID: 6818499566159539677}
+  - component: {fileID: 489541838}
   m_Layer: 0
   m_Name: Right Leg
   m_TagString: Untagged
@@ -1036,6 +1057,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &489541838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566159539676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566392831815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1083,7 @@ GameObject:
   - component: {fileID: 6818499566392831834}
   - component: {fileID: 6818499566392831813}
   - component: {fileID: 6818499566392831812}
+  - component: {fileID: 64090144}
   m_Layer: 0
   m_Name: Right Forearm
   m_TagString: Untagged
@@ -1193,6 +1228,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &64090144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566392831815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566480430218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1254,7 @@ GameObject:
   - component: {fileID: 6818499566480430217}
   - component: {fileID: 6818499566480430216}
   - component: {fileID: 6818499566480430219}
+  - component: {fileID: 794401395}
   m_Layer: 0
   m_Name: Left Forearm
   m_TagString: Untagged
@@ -1350,6 +1399,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &794401395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566480430218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566515298956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,6 +1425,7 @@ GameObject:
   - component: {fileID: 6818499566515298946}
   - component: {fileID: 6818499566515298957}
   - component: {fileID: 8697444902060402058}
+  - component: {fileID: 6818499566302518481}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1494,9 +1557,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0f0b1df210602488a3c71ac4e84e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   initGrav: 1
   highGrav: 1.5
   lerpDuration: 1
+--- !u!114 &6818499566302518481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566515298956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566541677309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1587,7 @@ GameObject:
   - component: {fileID: 6818499566541677296}
   - component: {fileID: 6818499566541677299}
   - component: {fileID: 6818499566541677298}
+  - component: {fileID: 1029098716}
   m_Layer: 0
   m_Name: Right Arm
   m_TagString: Untagged
@@ -1653,6 +1731,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &1029098716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566541677309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566650299668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1757,7 @@ GameObject:
   - component: {fileID: 6818499566650299691}
   - component: {fileID: 6818499566650299690}
   - component: {fileID: 6818499566650299669}
+  - component: {fileID: 1546391049}
   m_Layer: 0
   m_Name: Right Foot
   m_TagString: Untagged
@@ -1810,6 +1902,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &1546391049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566650299668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499566698717582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1926,7 @@ GameObject:
   - component: {fileID: 6818499566698717583}
   - component: {fileID: 1116290721}
   - component: {fileID: 5081216612089265360}
+  - component: {fileID: 1068798603}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Untagged
@@ -1888,6 +1994,22 @@ MonoBehaviour:
   rbleg: {fileID: 6818499567098962204}
   force: 300
   playerID: 0
+--- !u!114 &1068798603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566698717582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c36c7913cc0f1458b874da9cf8d748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  isGrab: 0
+  listGrab: []
+  gravityManager: {fileID: 8697444902060402058}
 --- !u!1 &6818499566758284368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2179,7 @@ GameObject:
   - component: {fileID: 6818499566871402927}
   - component: {fileID: 6818499566871402926}
   - component: {fileID: 6818499566871402921}
+  - component: {fileID: 1753343378}
   m_Layer: 0
   m_Name: Left Arm
   m_TagString: Untagged
@@ -2200,6 +2323,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &1753343378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566871402920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &6818499567098962201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,6 +2349,7 @@ GameObject:
   - component: {fileID: 6818499567098962204}
   - component: {fileID: 6818499567098962207}
   - component: {fileID: 6818499567098962206}
+  - component: {fileID: 347966370}
   m_Layer: 0
   m_Name: Left Foot
   m_TagString: Untagged
@@ -2357,6 +2494,19 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &347966370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499567098962201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66e76b9d502a074cad32cf495343f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
 --- !u!1 &8810918195640288208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2603,8 @@ MonoBehaviour:
   rb: {fileID: 3089080819342258393}
   playerID: 0
   isLeg: 1
+  isGrab: 0
+  ropeGrab: 0
 --- !u!70 &4897730775061580161
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
