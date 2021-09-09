@@ -5,7 +5,7 @@ using Rewired;
 
 public class TestGrab : MonoBehaviour
 {
-    public CircleCollider2D col;
+    public GravityManager gravityManager;
     public Rigidbody2D rb;
 
     [SerializeField] private int playerID = 0;
@@ -35,35 +35,26 @@ public class TestGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.GetButtonUp("GrabArm"))
+        if (player.GetButtonUp("GrabArm") && !isLeg)
         {
-            isGrab = false;
+            UnGrab();
+
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
         }
         
-        if (player.GetButtonUp("GrabLeg"))
+        if (player.GetButtonUp("GrabLeg") && isLeg)
         {
-            isGrab = false;
+            UnGrab();
+
             if (ropeGrab)
                 Destroy(GetComponent<FixedJoint2D>());
             ropeGrab = false;
         }
-
-        if (isGrab)
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            rb.bodyType = RigidbodyType2D.Kinematic;
-        }
-        else
-        {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.bodyType = RigidbodyType2D.Dynamic;
-        }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (((player.GetButton("GrabArm") && !isLeg)) || ((player.GetButton("GrabLeg") && isLeg)))
         {
@@ -85,7 +76,31 @@ public class TestGrab : MonoBehaviour
             }
 
             if (other.gameObject.CompareTag("Grable"))
+            {
+                if (!isGrab)
+                {
+                    Grab();
+                }
+                
                 isGrab = true;
+            }
         }
+    }
+
+    private void Grab()
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        StartCoroutine(gravityManager.Lerp(gravityManager.highGrav, gravityManager.initGrav, 0));
+    }
+
+    private void UnGrab()
+    {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        StartCoroutine(gravityManager.Lerp(gravityManager.initGrav, gravityManager.highGrav, gravityManager.lerpDuration));
+
+
+        isGrab = false;
     }
 }
