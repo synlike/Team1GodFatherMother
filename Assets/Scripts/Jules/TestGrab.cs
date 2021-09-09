@@ -6,7 +6,6 @@ using Rewired;
 public class TestGrab : MonoBehaviour
 {
     public CircleCollider2D col;
-    private Vector3 wallPoint;
     public Rigidbody2D rb;
 
     [SerializeField] private int playerID = 0;
@@ -85,10 +84,8 @@ public class TestGrab : MonoBehaviour
 
             }
 
-            if(other.gameObject.CompareTag("Grable"))
+            if (other.gameObject.CompareTag("Grable"))
                 isGrab = true;
         }
     }
-
-    
 }
