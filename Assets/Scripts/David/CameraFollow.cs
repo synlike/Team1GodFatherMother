@@ -61,6 +61,8 @@ public class CameraFollow : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Vector2 border = CalculateTreshold();
-        Gizmos.DrawWireCube(transform.position, new Vector3(border.x * 2, border.y * 2, 1));
+
+        Vector3 offsetY = new Vector3(0f, 4f, 0f);
+        Gizmos.DrawWireCube(transform.position - offsetY, new Vector3(border.x * 2, border.y * 2, 1));
     }
 }

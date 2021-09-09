@@ -12,7 +12,7 @@ public class IsGrounded : MonoBehaviour
 
 
     private CheckCollision[] listColliderElements;
-    public TestGrab[] listGrab;
+    private TestGrab[] listGrab;
     public GravityManager gravityManager;
     
 
@@ -65,6 +65,7 @@ public class IsGrounded : MonoBehaviour
                 StartCoroutine(gravityManager.Lerp(gravityManager.initGrav, gravityManager.highGrav, gravityManager.lerpDuration));
             }
         }
+        /*
         else if(isGrounded && !isGrab)
         {
             if (gravityManager.rb.gravityScale == gravityManager.highGrav)
@@ -72,5 +73,6 @@ public class IsGrounded : MonoBehaviour
                 StartCoroutine(gravityManager.Lerp(gravityManager.highGrav, gravityManager.initGrav, 0));
             }
         }
+        */
     }
 }
