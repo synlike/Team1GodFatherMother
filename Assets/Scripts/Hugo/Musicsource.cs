@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class Musicsource : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private static Musicsource _instance;
+
+    public static Musicsource Instance { get { return _instance; } }
+
+
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if(_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 }

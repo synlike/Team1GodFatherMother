@@ -458,7 +458,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.018000603, y: -0.4011941}
+  m_ConnectedAnchor: {x: -0.018000603, y: -0.401194}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -486,6 +486,7 @@ MonoBehaviour:
   isLeg: 1
   isGrab: 0
   ropeGrab: 0
+  grapSoundManager: {fileID: 1473546824}
 --- !u!70 &8946609239916876282
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -588,7 +589,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.0011217594, y: -0.5589156}
+  m_ConnectedAnchor: {x: -0.0011217833, y: -0.5589157}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -616,6 +617,7 @@ MonoBehaviour:
   isLeg: 0
   isGrab: 0
   ropeGrab: 0
+  grapSoundManager: {fileID: 1473546824}
 --- !u!1 &5401437353685065631
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,7 +704,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.0017453134, y: -0.53625226}
+  m_ConnectedAnchor: {x: 0.0017454624, y: -0.5362524}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -730,6 +732,7 @@ MonoBehaviour:
   isLeg: 0
   isGrab: 0
   ropeGrab: 0
+  grapSoundManager: {fileID: 1473546824}
 --- !u!1 &6818499565609133121
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,7 +881,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.020010948, y: 0.64435434}
-  m_ConnectedAnchor: {x: -0.43351078, y: -1.5700703}
+  m_ConnectedAnchor: {x: -0.43351078, y: -1.5700691}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1219,7 +1222,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.06501371, y: 0.67786825}
-  m_ConnectedAnchor: {x: 0.014036865, y: -0.3188503}
+  m_ConnectedAnchor: {x: 0.014037108, y: -0.31885025}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1390,7 +1393,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.095500946, y: 0.6780173}
-  m_ConnectedAnchor: {x: -0.00559555, y: -0.31161177}
+  m_ConnectedAnchor: {x: -0.005595386, y: -0.3116119}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1722,7 +1725,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.020013237, y: 0.36074165}
-  m_ConnectedAnchor: {x: 0.75741416, y: 0.6162281}
+  m_ConnectedAnchor: {x: 0.7574141, y: 0.61622846}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1893,7 +1896,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.064385414, y: 0.63712597}
-  m_ConnectedAnchor: {x: 0.06386185, y: -0.7828741}
+  m_ConnectedAnchor: {x: 0.06386185, y: -0.7828735}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1927,6 +1930,8 @@ GameObject:
   - component: {fileID: 1116290721}
   - component: {fileID: 5081216612089265360}
   - component: {fileID: 1068798603}
+  - component: {fileID: 1473546825}
+  - component: {fileID: 1473546824}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Untagged
@@ -2009,6 +2014,120 @@ MonoBehaviour:
   isGrounded: 0
   isGrab: 0
   gravityManager: {fileID: 8697444902060402058}
+--- !u!82 &1473546825
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566698717582}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.106
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1473546824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818499566698717582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dcd70039e0df843a77b815d254f2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClips:
+  - {fileID: 8300000, guid: 045b7ad1080abe048b1f74e9e65d730c, type: 3}
+  - {fileID: 8300000, guid: 53c9881db93b4fc41bc2adcf1aef77c4, type: 3}
+  - {fileID: 8300000, guid: 417ce0282e3d8f14ab5cf848fcd4a11f, type: 3}
+  - {fileID: 8300000, guid: f1b7f9c165239b94caa8bfe90c750599, type: 3}
+  - {fileID: 8300000, guid: 49a4a8d0593d7b64781bb06826cf8859, type: 3}
 --- !u!1 &6818499566758284368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2156,7 +2275,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.016895294, y: -1.4472351}
-  m_ConnectedAnchor: {x: -0.012101173, y: 1.3856697}
+  m_ConnectedAnchor: {x: -0.012101173, y: 1.3856704}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2313,7 +2432,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.018147316, y: 0.37340543}
-  m_ConnectedAnchor: {x: -0.7205761, y: 0.68549633}
+  m_ConnectedAnchor: {x: -0.7205761, y: 0.6854965}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2484,7 +2603,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.09265137, y: 0.6236665}
-  m_ConnectedAnchor: {x: -0.07182312, y: -0.7688103}
+  m_ConnectedAnchor: {x: -0.07182312, y: -0.76881105}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2604,6 +2723,7 @@ MonoBehaviour:
   isLeg: 1
   isGrab: 0
   ropeGrab: 0
+  grapSoundManager: {fileID: 1473546824}
 --- !u!70 &4897730775061580161
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
