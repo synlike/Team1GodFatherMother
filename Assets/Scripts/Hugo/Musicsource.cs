@@ -15,6 +15,7 @@ public class Musicsource : MonoBehaviour
         {
             _instance = this;
             DontDestroyOnLoad(this.gameObject);
+            GetComponent<AudioSource>().Play();
         }
         else
         {
