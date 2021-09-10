@@ -8,6 +8,8 @@ public class CameraFollow : MonoBehaviour
     public Vector2 offset;
     public float speed = 2f;
 
+    public float minY = 0f, maxY = 0f;
+
     private Vector2 treshold;
     private Rigidbody2D rb;
 
@@ -17,6 +19,7 @@ public class CameraFollow : MonoBehaviour
         treshold = CalculateTreshold();
         rb = target.GetComponent<Rigidbody2D>();
     }
+
 
 
     void FixedUpdate()
@@ -44,6 +47,8 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
         */
+
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, minY, maxY), transform.position.z);
     }
 
     private Vector3 CalculateTreshold()
