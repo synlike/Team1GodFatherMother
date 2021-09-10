@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityManager : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float initGrav = 1f;
     public float highGrav = 1.5f;
 
