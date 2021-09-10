@@ -17,6 +17,8 @@ public class TestGrab : MonoBehaviour
     public bool isGrab = false;
     public bool ropeGrab = false;
 
+    public GrapSoundManager grapSoundManager;
+
     private void Awake()
     {
         if (playerID == 0)
@@ -99,6 +101,7 @@ public class TestGrab : MonoBehaviour
                 if (!isGrab)
                 {
                     Grab();
+                    grapSoundManager.PlayRandomGrapSound();
                     triggerIcons.ShowButton(triggerIcons.grabbedColor);
                 }
                 
